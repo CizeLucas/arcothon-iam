@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Especialista - Linha do Tempo do Paciente</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <h1>Visualizador Unificado do Paciente</h1>
+      </header>
+
+      <main class="content">
+        <section class="patient-summary">
+          <img src="https://i.pravatar.cc/60?img=32" alt="Foto da Paciente" />
+          <div>
+            <h3>Joana Silva</h3>
+            <p>58 anos, Feminino - Prontuário: 789456</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Diagnóstico e Conduta Atuais</h2>
+          <div class="diagnosis-conduct-grid">
+            <div class="info-block">
+              <h4>Hipótese Diagnóstica (vinda da APS)</h4>
+              <p>
+                Hipertensão Arterial Sistêmica (HAS) não controlada, associada a
+                Cefaleia persistente.
+              </p>
+            </div>
+            <div class="info-block">
+              <h4>Conduta da APS</h4>
+              <p>
+                Encaminhamento para avaliação com Cardiologia para ajuste de
+                tratamento e investigação complementar.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="anamnesis-section">
+          <button id="toggle-anamnesis-btn" class="btn btn-secondary">
+            Visualizar Anamnese e Exame Físico atuais
+          </button>
+          <div id="anamnesis-details" class="hidden-details card">
+            <h4>Detalhes do Atendimento na APS (05/10/2025)</h4>
+            <div class="info-block">
+              <strong>Queixa Principal:</strong>
+              <p>Cefaleia persistente e episódios de tontura há 3 semanas.</p>
+            </div>
+            <div class="info-block">
+              <strong>Histórico da Doença Atual (HDA):</strong>
+              <p>
+                Paciente hipertensa (HAS) em uso de Losartana 50mg. Refere que a
+                dor de cabeça não melhora com analgésicos comuns. Pressão
+                arterial aferida hoje: 150/95 mmHg.
+              </p>
+            </div>
+            <div class="info-block">
+              <strong>Exames Anexados:</strong>
+              <p>ECG com sinais de sobrecarga ventricular esquerda.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card feedback-section">
+          <h2>Feedback do Especialista</h2>
+          <div class="toggle-buttons">
+            <button id="btn-approve" class="btn-toggle active-approve">
+              Aprovar Encaminhamento
+            </button>
+            <button id="btn-deny" class="btn-toggle">
+              Negar Encaminhamento
+            </button>
+          </div>
+          <div class="form-group" style="margin-top: 20px">
+            <label for="feedback-obs">Observações</label>
+            <textarea
+              id="feedback-obs"
+              class="feedback-textarea"
+              rows="4"
+              placeholder="Adicione observações sobre a sua decisão..."
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary">Enviar</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Linha do Tempo de Cuidado</h2>
+          <div class="timeline">
+            <div class="timeline-item new-referral">
+              <div class="icon">★</div>
+              <div class="timeline-content new-referral-content">
+                <h4>NOVO ENCAMINHAMENTO RECEBIDO</h4>
+                <div class="date">05 de Outubro de 2025 - 10:23</div>
+                <p>
+                  Recebido da UBS Centro, solicitado por Dr. Carlos Andrade.
+                </p>
+                <span class="source">[Origem: APS]</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="icon">⚕️</div>
+              <div class="timeline-content">
+                <h4>Consulta de Rotina</h4>
+                <div class="date">21 de Setembro de 2025</div>
+                <p>
+                  Paciente encaminhada para realização de ECG devido a picos de
+                  pressão.
+                </p>
+                <span class="source">[Origem: APS]</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="icon">💊</div>
+              <div class="timeline-content">
+                <h4>Ajuste de Medicação</h4>
+                <div class="date">15 de Junho de 2025</div>
+                <p>Aumento da dose de Losartana para 50mg/dia.</p>
+                <span class="source">[Origem: AE - Cardiologia]</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggle-anamnesis-btn");
+        const detailsDiv = document.getElementById("anamnesis-details");
+        const approveBtn = document.getElementById("btn-approve");
+        const denyBtn = document.getElementById("btn-deny");
+
+        if (toggleBtn && detailsDiv) {
+          toggleBtn.addEventListener("click", function () {
+            if (detailsDiv.style.display === "block") {
+              detailsDiv.style.display = "none";
+              toggleBtn.textContent =
+                "Visualizar Anamnese e Exame Físico atuais";
+            } else {
+              detailsDiv.style.display = "block";
+              toggleBtn.textContent = "Ocultar Anamnese e Exame Físico";
+            }
+          });
+        }
+
+        if (approveBtn && denyBtn) {
+          approveBtn.addEventListener("click", function () {
+            approveBtn.classList.add("active-approve");
+            denyBtn.classList.remove("active-deny");
+          });
+
+          denyBtn.addEventListener("click", function () {
+            denyBtn.classList.add("active-deny");
+            approveBtn.classList.remove("active-approve");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

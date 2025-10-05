@@ -3,209 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prontuário Médico Avançado</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Painel de Regulação</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="main-header">
-        <img src="logo_iam.png" alt="Logo" id="main_app_logo" />
-        <h2>IMU: Registro de Atendimento Médico</h2>
-      </header>
-      <form action="#" method="post">
-        <section class="form-section">
-          <h3>Identificação do Paciente</h3>
-          <div class="grid-container">
-            <div class="form-group grid-col-span-2">
-              <label for="nome">Nome Completo</label>
-              <input type="text" id="nome" name="nome" />
-            </div>
-            <div class="form-group">
-              <label for="data-nascimento">Data de Nascimento</label>
-              <input type="date" id="data-nascimento" name="data-nascimento" />
-            </div>
-            <div class="form-group">
-              <label for="genero">Gênero</label>
-              <select id="genero" name="genero">
-                <option value="">Selecione...</option>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-          </div>
-        </section>
-
-        <section class="form-section">
-          <h3>Anamnese e Exame Físico</h3>
-          <div class="anamnese-entry">
-            <div class="form-group">
-              <label for="queixa-principal">Queixa Principal e Duração</label>
-              <textarea
-                id="queixa-principal"
-                name="queixa-principal"
-                rows="3"
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <label for="hda">História da Doença Atual (HDA)</label>
-              <textarea id="hda" name="hda" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="antecedentes">Antecedentes Médicos Relevantes</label>
-              <textarea
-                id="antecedentes"
-                name="antecedentes"
-                rows="4"
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <label for="exame-fisico">Exame Físico</label>
-              <textarea
-                id="exame-fisico"
-                name="exame-fisico"
-                rows="5"
-              ></textarea>
-            </div>
-          </div>
-          <div class="add-button-container">
-            <button type="button" class="btn-add">
-              + Adicionar Outro Registro de Anamnese
-            </button>
-          </div>
-        </section>
-
-        <section class="form-section">
-          <h3>Perguntas e Respostas Realizadas</h3>
-          <div class="qa-pair">
-            <div class="form-group">
-              <label for="pergunta-1">Pergunta Realizada</label>
-              <textarea
-                id="pergunta-1"
-                name="pergunta-1"
-                rows="3"
-                placeholder="Ex: Você sentiu alguma tontura pela manhã?"
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <label for="resposta-1">Resposta do Paciente</label>
-              <textarea
-                id="resposta-1"
-                name="resposta-1"
-                rows="3"
-                placeholder="Ex: Sim, principalmente ao levantar rápido."
-              ></textarea>
-            </div>
-          </div>
-          <div class="add-button-container">
-            <button type="button" class="btn-add">
-              + Adicionar Pergunta/Resposta
-            </button>
-          </div>
-        </section>
-
-        <section class="form-section">
-          <h3>Sugestões de Perguntas (IA)</h3>
-          <p class="section-description">
-            Marque as perguntas que desejar utilizar e anote as respostas do
-            paciente abaixo de cada uma.
-          </p>
-
-          <div class="ai-question-block">
-            <label class="ai-question-prompt">
-              <input type="checkbox" name="ai-question-1-check" />
-              <span
-                >Além do sintoma principal, você notou alguma outra mudança em
-                seu corpo ou bem-estar?</span
-              >
-            </label>
-            <textarea
-              class="ai-answer-input"
-              name="ai-question-1-answer"
-              rows="2"
-              placeholder="Registre a resposta do paciente..."
-            ></textarea>
-          </div>
-
-          <div class="ai-question-block">
-            <label class="ai-question-prompt">
-              <input type="checkbox" name="ai-question-2-check" />
-              <span
-                >A medicação atual trouxe algum efeito colateral que não
-                havíamos discutido antes?</span
-              >
-            </label>
-            <textarea
-              class="ai-answer-input"
-              name="ai-question-2-answer"
-              rows="2"
-              placeholder="Registre a resposta do paciente..."
-            ></textarea>
-          </div>
-
-          <div class="ai-question-block">
-            <label class="ai-question-prompt">
-              <input type="checkbox" name="ai-question-3-check" />
-              <span
-                >Existe algo em sua rotina diária (trabalho, alimentação, sono)
-                que você acredita que piora ou melhora seus sintomas?</span
-              >
-            </label>
-            <textarea
-              class="ai-answer-input"
-              name="ai-question-3-answer"
-              rows="2"
-              placeholder="Registre a resposta do paciente..."
-            ></textarea>
-          </div>
-        </section>
-
-        <section class="form-section">
-          <h3>Diagnóstico e Conduta</h3>
-          <div class="form-group">
-            <label for="hipotese">Hipótese Diagnóstica</label>
-            <textarea id="hipotese" name="hipotese" rows="4"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="conduta">Conduta / Plano Terapêutico</label>
-            <textarea id="conduta" name="conduta" rows="6"></textarea>
-          </div>
-        </section>
-
-        <div class="form-actions">
-          <button type="submit" class="btn-submit">Salvar Prontuário</button>
-          <button type="button" class="btn-cancel">Cancelar</button>
+    <div class="main-container">
+      <header class="header">
+        <h1>Painel de Regulação</h1>
+        <div class="user-info">
+          <span>Central de Regulação de Sobral</span>
         </div>
-      </form>
+      </header>
+      <main class="content">
+        <div class="card">
+          <h2>Fila de Espera - Cardiologia</h2>
+          <div class="regulation-list">
+            <a href="especialista.html" class="patient-card">
+              <div class="patient-info">
+                <span class="patient-name">José Almeida</span>
+                <span class="patient-details">Origem: UBS Junco</span>
+                <span class="patient-details"
+                  >Motivo: Dor torácica atípica</span
+                >
+              </div>
+              <div class="patient-status">
+                <span class="status status-aprovado">Aprovado</span>
+              </div>
+            </a>
+
+            <a href="especialista.html" id="joana-card" class="patient-card">
+              <div class="patient-info">
+                <span class="patient-name"><strong>Joana Silva</strong></span>
+                <span class="patient-details"
+                  ><strong>Origem: UBS Centro</strong></span
+                >
+                <span class="patient-details"
+                  ><strong>Motivo: HAS não controlada / Cefaleia</strong></span
+                >
+              </div>
+              <div class="patient-status">
+                <span id="joana-status" class="status status-aguardando"
+                  >Aguardando</span
+                >
+              </div>
+            </a>
+
+            <a href="especialista.html" class="patient-card">
+              <div class="patient-info">
+                <span class="patient-name">Maria Oliveira</span>
+                <span class="patient-details">Origem: UBS Dom José</span>
+                <span class="patient-details">Motivo: Síncope</span>
+              </div>
+              <div class="patient-status">
+                <span class="status status-aguardando">Aguardando</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
 
     <script>
-      // Garante que o script só rode depois que a página estiver totalmente carregada.
-      document.addEventListener("DOMContentLoaded", function () {
-        // 1. Seleciona todos os checkboxes das perguntas da IA.
-        const aiCheckboxes = document.querySelectorAll(
-          '.ai-question-prompt input[type="checkbox"]'
-        );
+      function approveReferral(event) {
+        // Impede que o clique no botão ative o link do card
+        event.preventDefault();
+        event.stopPropagation();
 
-        // 2. Itera sobre cada checkbox encontrado.
-        aiCheckboxes.forEach(function (checkbox) {
-          // 3. Adiciona um "ouvinte" de evento para o clique (ou mudança de estado).
-          checkbox.addEventListener("change", function () {
-            // 4. Encontra o campo de resposta (textarea) que é o próximo elemento irmão do <label>.
-            // O checkbox está dentro do <label>, então subimos um nível (parentElement).
-            const answerInput = checkbox.parentElement.nextElementSibling;
+        const statusCell = document.getElementById("joana-status");
+        const approveBtn = document.getElementById("approve-btn");
 
-            // 5. Verifica se o checkbox está marcado.
-            if (this.checked) {
-              // Se estiver marcado, mostra o campo de resposta.
-              answerInput.style.display = "block";
-            } else {
-              // Se não estiver marcado, oculta o campo de resposta.
-              answerInput.style.display = "none";
-            }
-          });
-        });
-      });
+        // Simula a mudança de status
+        statusCell.textContent = "Aprovado";
+        statusCell.className = "status status-aprovado";
+        approveBtn.style.display = "none";
+
+        // O redirecionamento foi removido daqui, pois agora o clique no card inteiro faz isso.
+      }
     </script>
   </body>
 </html>

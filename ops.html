@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APS - Módulo de Encaminhamento</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <h1>Módulo de Encaminhamento Inteligente</h1>
+        <div class="user-info">
+          <span>Dr. Carlos Andrade</span><br />
+          <span>Clínico Geral - UBS Centro</span>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="referral-form">
+          <div class="patient-summary">
+            <img src="https://i.pravatar.cc/60?img=32" alt="Foto da Paciente" />
+            <div>
+              <h3>Joana Silva</h3>
+              <p>58 anos, Feminino - Prontuário: 789456</p>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top: 25px">
+            <h2>Formulário de Encaminhamento</h2>
+            <div class="form-group">
+              <label>Queixa Principal</label>
+              <div class="prefilled-data">
+                Cefaleia persistente e episódios de tontura há 3 semanas.
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Histórico Relevante da Doença Atual (HDA)</label>
+              <div class="prefilled-data">
+                Paciente hipertensa (HAS) em uso de Losartana 50mg. Refere que a
+                dor de cabeça não melhora com analgésicos comuns. Pressão
+                arterial aferida hoje: 150/95 mmHg. Nega outros sintomas.
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Exames Anexados (Automático)</label>
+              <div class="prefilled-data">
+                Hemograma Completo (20/09/2025) - Sem alterações.<br />Eletrocardiograma
+                (21/09/2025) - Sinais de sobrecarga ventricular esquerda.
+              </div>
+            </div>
+            <button
+              class="btn btn-primary"
+              onclick="window.location.href='regulacao.html'"
+            >
+              Enviar Encaminhamento para Cardiologia
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
