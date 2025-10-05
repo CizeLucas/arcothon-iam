@@ -18,20 +18,11 @@
         <div class="card">
           <h2>Fila de Espera - Cardiologia</h2>
           <div class="regulation-list">
-            <a href="especialista.html" class="patient-card">
-              <div class="patient-info">
-                <span class="patient-name">José Almeida</span>
-                <span class="patient-details">Origem: UBS Junco</span>
-                <span class="patient-details"
-                  >Motivo: Dor torácica atípica</span
-                >
-              </div>
-              <div class="patient-status">
-                <span class="status status-aprovado">Aprovado</span>
-              </div>
-            </a>
-
-            <a href="especialista.html" id="joana-card" class="patient-card">
+            <a
+              href="especialista.html"
+              id="joana-card"
+              class="patient-card priority-vermelho"
+            >
               <div class="patient-info">
                 <span class="patient-name"><strong>Joana Silva</strong></span>
                 <span class="patient-details"
@@ -48,37 +39,60 @@
               </div>
             </a>
 
-            <a href="especialista.html" class="patient-card">
+            <a href="especialista.html" class="patient-card priority-laranja">
               <div class="patient-info">
-                <span class="patient-name">Maria Oliveira</span>
-                <span class="patient-details">Origem: UBS Dom José</span>
-                <span class="patient-details">Motivo: Síncope</span>
+                <span class="patient-name">Marcos Batista</span>
+                <span class="patient-details">Origem: UPA Norte</span>
+                <span class="patient-details"
+                  >Motivo: Palpitações e falta de ar</span
+                >
               </div>
               <div class="patient-status">
                 <span class="status status-aguardando">Aguardando</span>
+              </div>
+            </a>
+
+            <a href="especialista.html" class="patient-card priority-verde">
+              <div class="patient-info">
+                <span class="patient-name">Sandra Gomes</span>
+                <span class="patient-details">Origem: UBS Cohab I</span>
+                <span class="patient-details"
+                  >Motivo: Renovação de receita controlada</span
+                >
+              </div>
+              <div class="patient-status">
+                <span class="status status-aguardando">Aguardando</span>
+              </div>
+            </a>
+
+            <a href="especialista.html" class="patient-card priority-azul">
+              <div class="patient-info">
+                <span class="patient-name">Ana Lúcia</span>
+                <span class="patient-details">Origem: UBS Cohab II</span>
+                <span class="patient-details"
+                  >Motivo: Apresentação de exames de rotina</span
+                >
+              </div>
+              <div class="patient-status">
+                <span class="status status-aguardando">Aguardando</span>
+              </div>
+            </a>
+
+            <a href="especialista.html" class="patient-card priority-amarelo">
+              <div class="patient-info">
+                <span class="patient-name">José Almeida</span>
+                <span class="patient-details">Origem: UBS Junco</span>
+                <span class="patient-details"
+                  >Motivo: Dor torácica atípica</span
+                >
+              </div>
+              <div class="patient-status">
+                <span class="status status-aprovado">Aprovado</span>
               </div>
             </a>
           </div>
         </div>
       </main>
     </div>
-
-    <script>
-      function approveReferral(event) {
-        // Impede que o clique no botão ative o link do card
-        event.preventDefault();
-        event.stopPropagation();
-
-        const statusCell = document.getElementById("joana-status");
-        const approveBtn = document.getElementById("approve-btn");
-
-        // Simula a mudança de status
-        statusCell.textContent = "Aprovado";
-        statusCell.className = "status status-aprovado";
-        approveBtn.style.display = "none";
-
-        // O redirecionamento foi removido daqui, pois agora o clique no card inteiro faz isso.
-      }
-    </script>
   </body>
 </html>
